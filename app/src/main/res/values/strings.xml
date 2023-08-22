@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Biblioteca Sena</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Sistema Biblioteca</string>
+    <string name="action_settings">Perfil</string>
+    <string name="action_salir">salir</string>
+
+    <string name="menu_prin">Sistema Biblioteca SENA</string>
+    <string name="menu_home">Inicio</string>
+    <string name="menu_gallery">Registro</string>
+    <string name="menu_slideshow">Inventario</string>
+
+    <string-array name="Dispositivo">
+        <item>Dispositivo</item>
+        <item>Video Beam</item>
+        <item>Portatil</item>
+        <item>Mouse</item>
+        <item>Teclado</item>
+        <item>Cable Hdmi</item>
+        <item>Extenciones</item>
+    </string-array>
+
+    <string-array name="Estado">
+        <item> Seleccionar Estado </item>
+        <item> Bueno </item>
+        <item> Malo </item>
+        <item> Prestado </item>
+        <item> Reparacion </item>
+    </string-array>
+    <string-array name="rol">
+        <item> Seleccionar su Rol </item>
+        <item> Administrador</item>
+        <item> Funcionarios </item>
+        <item> Instructores </item>
+    </string-array>
+
+</resources>

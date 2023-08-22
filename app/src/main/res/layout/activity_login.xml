@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+    tools:context=".Login">
+
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/fondo2"
+        android:alpha="0.4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+    <LinearLayout
+        android:layout_width="385dp"
+        android:layout_height="675dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.494">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="303dp"
+            android:layout_height="176dp"
+            android:layout_marginLeft="52dp"
+            android:layout_marginTop="45dp"
+            android:scaleType="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.589"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.114"
+            app:srcCompat="@mipmap/lo" />
+
+        <EditText
+            android:id="@+id/user"
+            android:layout_width="323dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="29dp"
+            android:drawableLeft="@drawable/login"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="USUARIO"
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.618"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.357" />
+
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="324dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/password"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="CONTRASEÑA"
+            android:inputType="textPassword"
+            android:textColor="#616A6B"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.572"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.465" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="29dp"
+            android:text="¿Olvidastes tu contraseña?"
+            android:textColor="#616A6B"
+            tools:layout_editor_absoluteX="160dp"
+            tools:layout_editor_absoluteY="511dp" />
+
+
+        <Button
+            android:id="@+id/regis"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="#ffff"
+            android:text="Registrar"
+            android:textColor="#4CAF50"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/iniciar"
+            android:layout_width="161dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="213dp"
+            android:layout_marginTop="-50dp"
+            android:backgroundTint="#8BC34A"
+            android:text="Iniciar"
+            app:strokeColor="#8BC34A"
+            tools:layout_editor_absoluteX="273dp"
+            tools:layout_editor_absoluteY="409dp" />
+
+        <TextView
+            android:id="@+id/tx2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#616A6B"
+            android:layout_marginTop="75dp"
+            android:text="CENTRO DE COMERCIO, INDUSTRIA Y TURISMO (SENA)" />
+
+        <TextView
+            android:id="@+id/tx3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#616A6B"
+            android:layout_marginTop="15dp"
+            android:text="MONTERIA-CÓRDOBA" />
+
+        <TextView
+            android:id="@+id/tx4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:gravity="center"
+            android:text=" © CopyRight"
+            android:textColor="#616A6B" />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
