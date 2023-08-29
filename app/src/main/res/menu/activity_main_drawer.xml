@@ -18,9 +18,23 @@
             android:id="@+id/nav_gallery"
             android:icon="@drawable/registro"
             android:title="@string/menu_gallery" />
+
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/inventory"
             android:title="@string/menu_slideshow" />
+        <item
+            android:id="@+id/mantenimiento"
+            android:icon="@drawable/inventory"
+            android:title="@string/menu_mantenimiento">
+          <menu>
+            <item
+                android:id="@+id/nav_mantenimiento"
+                android:title="@string/menu_mantenimiento"
+
+                />
+
+          </menu>
+        </item>
     </group>
 </menu>
