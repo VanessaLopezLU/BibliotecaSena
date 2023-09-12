@@ -14,7 +14,6 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
-
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.bibliotecasena.ui.gallery.GalleryFragment"
@@ -26,7 +25,11 @@
         android:name="com.example.bibliotecasena.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
-
+    <fragment
+        android:id="@+id/nav_mantenimiento"
+        android:name="com.example.bibliotecasena.ui.MantenimientoFragment"
+        android:label="@string/menu_mantenimiento"
+        tools:layout="@layout/fragment_mantenimiento" />
 </navigation>
 
 
