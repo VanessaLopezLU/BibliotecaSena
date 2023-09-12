@@ -15,16 +15,15 @@
         android:text="Dispositivo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.659"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091"
+        app:layout_constraintVertical_bias="0.058"
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
         android:id="@+id/capa"
-        android:layout_width="353dp"
-        android:layout_height="568dp"
+        android:layout_width="369dp"
+        android:layout_height="600dp"
         android:orientation="vertical"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
