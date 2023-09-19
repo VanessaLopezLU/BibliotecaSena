@@ -6,5 +6,4 @@ public class Equipo {
      private String descripcion;
      private int id_estado;
      private  int id_tipo;
-
 }
