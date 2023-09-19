@@ -1,4 +1,4 @@
-package com.example.bibliotecasena.modelos;
+package com.example.bibliotecasena.modelos.User;
 
 public class User {
     private Long cedula;

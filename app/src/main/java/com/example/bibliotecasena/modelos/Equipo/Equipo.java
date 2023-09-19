@@ -1,4 +1,4 @@
-package com.example.bibliotecasena.modelos;
+package com.example.bibliotecasena.modelos.Equipo;
 
 public class Equipo {
      private int id;
