@@ -7,7 +7,5 @@ public class Novedad {
     private String descripcion;
     private Date fechaNovedad;
     private String tipoNovedad;
-    private int[] prestamo;
-
-
+    private int prestamo;
 }

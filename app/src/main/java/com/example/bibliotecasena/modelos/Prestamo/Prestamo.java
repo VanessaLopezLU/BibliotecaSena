@@ -9,5 +9,5 @@ public class Prestamo {
     private int cantidad;
     private int cedula;
     private int id_estadoprestamo;
-    private int[] equipo;
+    private int equipo;
 }
