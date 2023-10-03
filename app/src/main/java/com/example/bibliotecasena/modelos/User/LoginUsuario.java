@@ -1,20 +1,14 @@
 package com.example.bibliotecasena.modelos.User;
 
-public class Login {
+public class LoginUsuario {
     private Long cedula;
     private String contrasena;
-
-    public Login (Long cedula, String contrasena) {
-        this.cedula = cedula;
-        this.contrasena= contrasena;
-
-    }
 
     public Long cedula() {
         return cedula;
     }
 
-    public Login setCedula(Long cedula) {
+    public LoginUsuario setCedula(Long cedula) {
         this.cedula = cedula;
         return this;
     }
@@ -23,8 +17,13 @@ public class Login {
         return contrasena;
     }
 
-    public Login setContrasena(String contrasena) {
+    public LoginUsuario setContrasena(String contrasena) {
         this.contrasena = contrasena;
         return this;
+    }
+
+    public LoginUsuario(Long cedula, String contrasena) {
+        this.cedula = cedula;
+        this.contrasena = contrasena;
     }
 }

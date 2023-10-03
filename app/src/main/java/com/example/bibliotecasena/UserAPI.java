@@ -1,7 +1,6 @@
 package com.example.bibliotecasena;
 
-import com.example.bibliotecasena.modelos.User.ApiResponse;
-import com.example.bibliotecasena.modelos.User.LoginDto;
+import com.example.bibliotecasena.modelos.User.LoginUsuario;
 import com.example.bibliotecasena.modelos.User.User;
 
 
@@ -19,7 +18,7 @@ public interface UserAPI {
     @POST("user/crear")
     Call<User> createUser(@Body User user);
     @POST("user/login")
-    Call<ApiResponse> loginUser(@Body LoginDto loginDto);
+    Call<Boolean> loginUser(@Body LoginUsuario loginDto);
 
     @GET("user/")
     Call<List<User>> getUsers(@Path("id")int userid);

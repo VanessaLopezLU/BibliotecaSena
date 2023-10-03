@@ -12,11 +12,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import com.example.bibliotecasena.MainActivity;
-import com.example.bibliotecasena.Registrar;
-import com.example.bibliotecasena.modelos.User.ApiResponse;
-import com.example.bibliotecasena.modelos.User.Login;
-import com.example.bibliotecasena.UserAPI;
+import com.example.bibliotecasena.modelos.User.LoginUsuario;
+
 
 public class Login extends AppCompatActivity {
 
@@ -38,20 +35,21 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     Log.i("login", "Llego al click");
-                    String cedula = usuario.getText().toString();
+                    int  cedula = Integer.parseInt(usuario.getText().toString());
                     String contrasena = password.getText().toString();
 
-                    // Crear un objeto Login con la cédula y la contraseña
-                    Login request = new Login(cedula, "contrasena");
 
-                    Call<ApiResponse> call = userService.Login(request);
+                    LoginUsuario request = new LoginUsuario((long) cedula, "contrasena");
+
+
+                    Call<Boolean> call = userService.loginUser(request);
 
                     call.enqueue(new Callback<Boolean>() {
                         @Override
                         public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                             if (response.isSuccessful()) {
                                 boolean isSuccess = response.body();
-                                if (response.isSuccess) {
+                                if (response.isSuccessful()) {
                                     // Autenticación exitosa, inicia la actividad principal
                                     Intent intent = new Intent(Login.this, MainActivity.class);
                                     startActivity(intent);
@@ -61,7 +59,7 @@ public class Login extends AppCompatActivity {
                                 }
                             } else {
                                 // Error en la respuesta
-                                Toast.makeText(Login.this, "Error en la respuesta del servidor", Toast.LENGTHLONG).show();
+                                Toast.makeText(Login.this, "Error en la respuesta del servidor", Toast.LENGTH_LONG).show();
                             }
                         }
 
