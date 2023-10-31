@@ -1,4 +1,4 @@
-package com.example.bibliotecasena;
+package com.example.bibliotecasena.interfaz;
 
 import com.example.bibliotecasena.modelos.User.LoginUsuario;
 import com.example.bibliotecasena.modelos.User.User;
