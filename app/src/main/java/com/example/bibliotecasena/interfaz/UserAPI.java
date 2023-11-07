@@ -21,7 +21,7 @@ public interface UserAPI {
     Call<Boolean> loginUser(@Body LoginUsuario loginDto);
 
     @GET("user/")
-    Call<List<User>> getUsers(@Path("id")int userid);
+    Call<List<User>> getUsers();
 
     @DELETE("user/{cedula}")
     Call<Void> deleteUser(@Path("cedula") int cedula);

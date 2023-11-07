@@ -31,12 +31,7 @@
         <item> Prestado </item>
         <item> Reparacion </item>
     </string-array>
-    <string-array name="rol">
-        <item> Seleccionar su Rol </item>
-        <item> Administrador</item>
-        <item> Funcionarios </item>
-        <item> Instructores </item>
-    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

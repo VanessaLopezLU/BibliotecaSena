@@ -4,6 +4,8 @@ public class Rol {
     private int id;
     private String descripcion;
 
+
+
     public int getId() {
         return id;
     }

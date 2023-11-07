@@ -101,7 +101,6 @@
             android:layout_height="34dp"
             android:layout_marginLeft="12dp"
             android:layout_marginTop="20dp"
-            android:entries="@array/rol"
             android:hint="Dispositivo"
             android:text="Dispositivo"
             android:textColor="#616A6B" />

@@ -26,7 +26,7 @@ public class Login extends AppCompatActivity {
         UserAPI userService = ClienteAPI.getClient().create(UserAPI.class);
 
         Basedatos BD = new Basedatos(Login.this, "Basedatos", 1);
-        EditText usuario = findViewById(R.id.user);
+        EditText user = findViewById(R.id.user);
         EditText password = findViewById(R.id.password);
         Button startButton = findViewById(R.id.iniciar);
         Button regisButton = findViewById(R.id.regis);
@@ -36,12 +36,10 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     Log.i("login", "Llego al click");
-                    int  cedula = Integer.parseInt(usuario.getText().toString());
-                    String contrasena = password.getText().toString();
+                    int cedula = Integer.parseInt(user.getText().toString());
+                    String contrasena = password.getText().toString(); // Aquí obtén la contraseña del campo de texto
 
-
-                    LoginUsuario request = new LoginUsuario((long) cedula, "contrasena");
-
+                    LoginUsuario request = new LoginUsuario((long) cedula, contrasena); // Pasar la contraseña real
 
                     Call<Boolean> call = userService.loginUser(request);
 
@@ -50,12 +48,12 @@ public class Login extends AppCompatActivity {
                         public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                             if (response.isSuccessful()) {
                                 boolean isSuccess = response.body();
-                                if (response.isSuccessful()) {
+                                if (isSuccess) { // Verifica si la autenticación es exitosa
                                     // Autenticación exitosa, inicia la actividad principal
                                     Intent intent = new Intent(Login.this, MainActivity.class);
                                     startActivity(intent);
                                 } else {
-                                    // Autenticación fallida
+
                                     Toast.makeText(Login.this, "Usuario Incorrecto", Toast.LENGTH_LONG).show();
                                 }
                             } else {
@@ -75,6 +73,7 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
+
 
         regisButton.setOnClickListener(new View.OnClickListener() {
             @Override
