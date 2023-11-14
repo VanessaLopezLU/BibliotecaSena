@@ -57,7 +57,7 @@ public class Registrar<UserDto> extends AppCompatActivity {
         guardarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                  /* UserAPI userAPI = ClienteAPI.getClient().create(UserAPI.class);
+                UserAPI userAPI = ClienteAPI.getClient().create(UserAPI.class);
                 String nombre = Nombre.getText().toString();
                 String cedula = Cedula.getText().toString();
                 String contrasena = Contrasena.getText().toString();
@@ -75,6 +75,8 @@ public class Registrar<UserDto> extends AppCompatActivity {
                 user.setCorreo(correo);
 
 
+
+                /*
 
                int RolDatabase = 0;
                switch (Rol.getSelectedItem().toString()) {
