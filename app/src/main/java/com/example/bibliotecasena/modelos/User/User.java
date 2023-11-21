@@ -8,8 +8,8 @@ public class User {
     private Long telefone;
     private String usuario;
     private String contrasena;
-    private int[] id_rol;
-    private int[] id_estado;
+    private int id_rol;
+    private int id_estado;
 
     public Long cedula() {
         return cedula;
@@ -74,21 +74,32 @@ public class User {
         return this;
     }
 
-    public int[] id_rol() {
+    public int id_rol() {
         return id_rol;
     }
 
-    public User setId_rol(int[] id_rol) {
+    public User setId_rol(int id_rol) {
         this.id_rol = id_rol;
         return this;
     }
 
-    public int[] id_estado() {
+    public int id_estado() {
         return id_estado;
     }
 
-    public User setId_estado(int[] id_estado) {
+    public User setId_estado(int id_estado) {
         this.id_estado = id_estado;
         return this;
+    }
+    public User(Long cedula , String nombre, String apellido,String correo, Long telefono , String usuario, String contrasena, int id_rol, int id_estado) {
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.telefone = telefono;
+        this.usuario = usuario;
+        this.contrasena = contrasena;
+        this.id_rol= id_rol;
+        this.id_estado = id_estado;
     }
 }

@@ -16,7 +16,8 @@ import java.util.List;
 
 public interface UserAPI {
     @POST("user/crear")
-    Call<User> createUser(@Body User user);
+
+    Call<User> createUser(@Body User user) ;
     @POST("user/login")
     Call<Boolean> loginUser(@Body LoginUsuario loginDto);
 
@@ -28,5 +29,6 @@ public interface UserAPI {
 
     @PUT("user/actualizar")
     Call<User> updateUser(@Body User user);
+
 
 }
