@@ -21,8 +21,8 @@ public interface PrestamoAPI {
     @GET("prestamo")
     Call<List<Prestamo>> ObtenerPrestamo();
 
-    @GET("prestamo/obtenerPrestamoPorCedula ")
-    Call<List<Prestamo>> ObtenerPrestamoPorCeddula();
+    @GET("prestamo/obtenerPrestamoPorCedula/{cedula}")
+    Call<List<Prestamo>> ObtenerPrestamoPorCeddula(@Path("cedula") long cedula);
 
 
     @DELETE("prestamo/{id}") // Ruta para eliminar un prestamo  por ID
