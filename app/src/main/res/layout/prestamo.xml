@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo2">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="261dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="sans-serif"
+        android:text="Formulario de Prèstamo"
+        android:textColor="#172218"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.66"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="396dp"
+        android:layout_height="171dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <Spinner
+            android:id="@+id/Ndocumento"
+            android:layout_width="match_parent"
+            android:layout_height="69dp" />
+
+        <Spinner
+            android:id="@+id/Eprestamo"
+            android:layout_width="match_parent"
+            android:layout_height="69dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Fecha de Prestamo" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Hora de Inicio" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editTextDate5"
+        android:layout_width="182dp"
+        android:layout_height="44dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="date"
+        tools:layout_editor_absoluteX="221dp"
+        tools:layout_editor_absoluteY="278dp" />
+
+    <EditText
+        android:id="@+id/editTextDate6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="date"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="278dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="396dp"
+        android:layout_height="38dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="333dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Hora de Entrega" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Tipo de Equipo" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

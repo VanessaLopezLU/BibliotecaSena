@@ -42,7 +42,7 @@ public class Registrar extends AppCompatActivity {
 
 
 
-        Button guardarButton = findViewById(R.id.guardar);
+
         EditText Nombre = findViewById(R.id.editName);
         EditText Apellido = findViewById(R.id.editLastname);
         EditText Cedula = findViewById(R.id.cedula);
@@ -55,7 +55,7 @@ public class Registrar extends AppCompatActivity {
         EstadoUser = findViewById(R.id.spriEstado);
         obtenerEstado();
 
-
+        Button guardarButton = findViewById(R.id.guardar);
 
 
 
@@ -73,7 +73,7 @@ public class Registrar extends AppCompatActivity {
                 String contrasena = Contrasena.getText().toString();
                 int id_rol = obtenerIdRol();
                 int  id_estado = obtenerIdestado();
-                // Suponiendo que tienes un constructor en la clase User con estos parámetros en este orden
+
 
 
                 User user = new User (cedula, nombre,apellido,correo, telefono, usuario, contrasena, id_rol,id_estado);
