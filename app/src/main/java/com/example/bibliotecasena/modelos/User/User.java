@@ -1,5 +1,7 @@
 package com.example.bibliotecasena.modelos.User;
 
+import java.util.stream.Stream;
+
 public class User {
     private Long cedula;
     private String nombre;
@@ -102,4 +104,40 @@ public class User {
         this.id_rol= id_rol;
         this.id_estado = id_estado;
     }
+
+
+    public Long getCedula() {
+        return null;
+    }
+
+    public String getNombre() {
+        return null;
+    }
+
+    public String getContrasena() {
+        return null;
+    }
+
+    public String getCorreo() {
+        return null;
+    }
+
+    public Long getTelefono() {
+        return null;
+    }
+
+    public String getDireccion() {
+        return null;
+    }
+
+    public Object getIdRol() {
+        return null;
+    }
+
+  
+
+    public Object getIdestado() {
+        return null;
+    }
 }
+

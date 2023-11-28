@@ -1,6 +1,7 @@
 package com.example.bibliotecasena;
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,6 +9,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
+
+import com.example.bibliotecasena.modelos.User.User;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -95,9 +98,9 @@ public class Basedatos extends SQLiteOpenHelper {
     }
 
     public void  Escribir(String strSQL) {
-        SQLiteDatabase sqLiteDatabase= this.getWritableDatabase();
-        sqLiteDatabase.execSQL(strSQL);
-        sqLiteDatabase.close();
+        SQLiteDatabase bibliotecaSena= this.getWritableDatabase();
+        bibliotecaSena.execSQL(strSQL);
+        bibliotecaSena.close();
 
     }
 
@@ -124,4 +127,54 @@ public class Basedatos extends SQLiteOpenHelper {
         return jsonArray;
     }
 
+
+
+
+
+    // Método para insertar un usuario en la tabla USUARIO
+    public void insertarUsuario(User user) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        // Agregar los valores del usuario a la ContentValues
+        values.put("CEDULA", user.getCedula());
+        values.put("NOMBRE", user.getNombre());
+        values.put("CONTRASENA", user.getContrasena());
+        values.put("CORREO", user.getCorreo());
+        values.put("TELEFONO", user.getTelefono());
+        values.put("ID_ROL", (String) user.getIdRol());
+        values.put("ID_ESTADO", (String) user.getIdestado());
+        // Asegúrate de que el User tenga el método getIdRol()
+
+        // Insertar el usuario en la tabla USUARIO
+        db.insert("USUARIO", null, values);
+
+        // Cerrar la conexión a la base de datos
+        db.close();
+    }
+
+    // ... (otros métodos)
+
+    // Método para obtener datos como JSONArray
+    public JSONArray obtenerDatos(String strSql, String[] columnas) {
+        JSONArray jsonArray = new JSONArray();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(strSql, null);
+        cursor.moveToFirst();
+        for (int i = 0; i < cursor.getCount(); i++) {
+            JSONObject jsonObject = new JSONObject();
+            for (int j = 0; j < columnas.length; j++) {
+                try {
+                    jsonObject.put(columnas[j], cursor.getString(cursor.getColumnIndex(columnas[j])));
+                } catch (Exception e) {
+                    Log.i("Mayor", e.toString());
+                }
+            }
+            jsonArray.put(jsonObject);
+            cursor.moveToNext();
+        }
+        db.close();
+        return jsonArray;
+    }
 }
+

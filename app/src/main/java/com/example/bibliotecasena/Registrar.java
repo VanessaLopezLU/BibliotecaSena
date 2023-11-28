@@ -128,6 +128,12 @@ public class Registrar extends AppCompatActivity {
                     User createdUser = response.body();
                     // Maneja la respuesta como desees, por ejemplo, muestra un mensaje de éxito
                     Toast.makeText(Registrar.this, "Usuario creado correctamente", Toast.LENGTH_SHORT).show();
+
+                    User userAPI = response.body();
+                    Basedatos basedatos = new Basedatos(Registrar.this, "bibliotecaSena", 1);
+                    basedatos.insertarUsuario(userAPI);
+                    Toast.makeText(Registrar.this, "Usuario creado correctamente", Toast.LENGTH_SHORT).show();
+
                 } else {
                     // La petición no fue exitosa, maneja el error
                     Toast.makeText(Registrar.this, "Error al crear usuario", Toast.LENGTH_SHORT).show();
