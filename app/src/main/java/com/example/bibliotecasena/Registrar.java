@@ -39,10 +39,6 @@ public class Registrar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar);
-
-
-
-
         EditText Nombre = findViewById(R.id.editName);
         EditText Apellido = findViewById(R.id.editLastname);
         EditText Cedula = findViewById(R.id.cedula);
@@ -75,40 +71,14 @@ public class Registrar extends AppCompatActivity {
                 int  id_estado = obtenerIdestado();
 
 
-
+                Log.i("error", "Registro los datos");
                 User user = new User (cedula, nombre,apellido,correo, telefono, usuario, contrasena, id_rol,id_estado);
-
+                Log.i("error", "creo el objeto");
                   createUser(user);
 
-
-                /*
-
-               int RolDatabase = 0;
-               switch (Rol.getSelectedItem().toString()) {
-                    case "Administrador":
-                        RolDatabase = 1;
-                        break;
-                    case "Funcionario":
-                        RolDatabase = 2;
-                        break;
-                    case "Instructores":
-                        RolDatabase = 3;
-                        break;
-                // insert into usurio values ("1003047036","leydis vanessa","Va123","leylopez32@gmail.com,3003379075,"diagonal 2", 2 )
-                //insert INTO ROLES VALUES(2,"Administrativo");
-
-                String rolSeleccionado = Rol.getSelectedItem().toString();
-
-                JSONArray CedulaArray = BD.getJSON("SELECT CEDULA FROM USUARIO WHERE CEDULA = " + Cedula.getText().toString(), new String[]{"CEDULA"});
-                if ( CedulaArray.length() > 0) {
-                    Toast.makeText(Registrar.this, "Usuario ya existe ", Toast.LENGTH_LONG).show();
-                }
-                else {
-                    BD.Escribir("insert into USUARIO values(\""+Cedula.getText().toString()+"\",\""+Nombre.getText().toString()+"\",\""+Contrasena.getText().toString()+"\",\""+Correo.getText().toString()+"\",\""+Telefono.getText().toString()+"\",\""+Direccion.getText().toString()+"\",\""+ rolSeleccionado + "\")");
-                    Toast.makeText(Registrar.this, "Usuario Registrado ", Toast.LENGTH_LONG).show();
-                }*/
                 Intent intent = new Intent(Registrar.this, Login.class);
                 startActivity(intent);
+
 
               }
 
@@ -118,28 +88,28 @@ public class Registrar extends AppCompatActivity {
     }
     private void createUser(User user) {
         UserAPI userAPI = new ClienteAPI().getClient().create(UserAPI.class);
-        Call<User> call = userAPI.createUser(user);
+        Call<Boolean> call = userAPI.createUser(user);
+        Log.i("error", "conecto a la api");
 
-        call.enqueue(new Callback<User>() {
+        call.enqueue(new Callback<Boolean>() {
             @Override
-            public void onResponse(Call<User> call, Response<User> response) {
+            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                 if (response.isSuccessful()) {
                     // La petición fue exitosa, procesa la respuesta
-                    User createdUser = response.body();
                     // Maneja la respuesta como desees, por ejemplo, muestra un mensaje de éxito
                     Toast.makeText(Registrar.this, "Usuario creado correctamente", Toast.LENGTH_SHORT).show();
                 } else {
                     // La petición no fue exitosa, maneja el error
                     Toast.makeText(Registrar.this, "Error al crear usuario", Toast.LENGTH_SHORT).show();
-                    Log.e("CreateUserError", "Error al crear usuario: " + response.message());
+                    Log.i("error", "Error al crear usuario: " + response.message());
                 }
             }
 
             @Override
-            public void onFailure(Call<User> call, Throwable t) {
+            public void onFailure(Call<Boolean> call, Throwable t) {
                 // Error en la conexión o al realizar la petición
                 Toast.makeText(Registrar.this, "Error de conexión: " + t.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.e("CreateUserFailure", "Error de conexión: " + t.getMessage());
+                Log.e("error", "Error de conexión: " + t.getMessage());
             }
         });
     }
@@ -201,7 +171,8 @@ public class Registrar extends AppCompatActivity {
 
     }
     private int obtenerIdRol() {
-        String rolSeleccionado = String.valueOf(Integer.parseInt(Rol.getSelectedItem().toString()));
+        String rolSeleccionado = Rol.getSelectedItem().toString();
+        Log.i("error", rolSeleccionado);
         int id_rol = 0;
         Log.i("rol" , "r: "+rolSeleccionado+", id: "+id_rol);
 
@@ -215,7 +186,7 @@ public class Registrar extends AppCompatActivity {
         return id_rol;
     }
     private int obtenerIdestado() {
-        String estadoSeleccionado = String.valueOf(Integer.parseInt(EstadoUser.getSelectedItem().toString()));
+        String estadoSeleccionado = EstadoUser.getSelectedItem().toString();
         int id_estado = 0;
 
 

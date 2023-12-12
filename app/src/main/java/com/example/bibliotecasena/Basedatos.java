@@ -26,6 +26,7 @@ public class Basedatos extends SQLiteOpenHelper {
 
         strSQL = "CREATE TABLE IF NOT EXISTS USUARIO(CEDULA TEXT PRIMARY KEY," +
                 "NOMBRE TEXT," +
+                "APELLIDO TEXT," +
                 "CONTRASENA  TEXT," +
                 "CORREO TEXT," +
                 "TELEFONO TEXT," +

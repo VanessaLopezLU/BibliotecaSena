@@ -5,7 +5,7 @@ public class User {
     private String nombre;
     private String apellido;
     private String correo;
-    private Long telefone;
+    private Long telefono;
     private String usuario;
     private String contrasena;
     private int id_rol;
@@ -48,11 +48,11 @@ public class User {
     }
 
     public Long telefone() {
-        return telefone;
+        return telefono;
     }
 
     public User setTelefone(Long telefone) {
-        this.telefone = telefone;
+        this.telefono = telefone;
         return this;
     }
 
@@ -96,7 +96,7 @@ public class User {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
-        this.telefone = telefono;
+        this.telefono = telefono;
         this.usuario = usuario;
         this.contrasena = contrasena;
         this.id_rol= id_rol;
